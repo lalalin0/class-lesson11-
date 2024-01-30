@@ -1,7 +1,6 @@
 import math
 
 # Task 1
-
 class Soda:
     def __init__(self, flavor=None):
         self.flavor = flavor
@@ -11,13 +10,6 @@ class Soda:
             return f"У вас газировка с {self.flavor} вкусом"
         else:
             return "У вас обычная газировка"
-
-
-soda_with_flavor = Soda("клубничным")
-print(soda_with_flavor)
-
-soda_without_flavor = Soda()
-print(soda_without_flavor)
 
 
 # Task 2
@@ -40,16 +32,6 @@ class Math:
             return value1 / value2
         else:
             return 'cannot division by 0'
-
-
-result_addition = Math.addition(4, -23)
-print(f'the result of sum: {result_addition}')
-result_subtraction = Math.subtraction(4.5, 34.5)
-print(f'the result of subtraction: {result_subtraction}')
-result_multiplication = Math.multiplication(12, 5)
-print(f'the result of multiplication: {result_multiplication}')
-result_division = Math.division(34, 5)
-print(f'the result of division: {result_division}')
 
 
 # Task 3
@@ -80,19 +62,6 @@ class Car:
     def set_year(self, new_year):
         self.year = new_year
         print(f'new year car: {new_year}')
-
-
-my_car = Car(color="red", type_car="bmw", year=2020)
-
-print(f"color : {my_car.color}, type: {my_car.type_car}, year: {my_car.year}")
-
-my_car.start()
-
-my_car.set_year(2021)
-my_car.set_type_car("ferrari")
-my_car.set_color("green")
-
-my_car.stop()
 
 
 # Task 4
@@ -128,6 +97,59 @@ class Sphere:
         return distance <= self.radius
 
 
+#  Task 5
+
+class SuperStr(str):
+    def is_repeatance(self, string):
+        if not string:
+            return False
+
+        repeat_count = len(self) // len(string)
+        return self == string * repeat_count
+
+    def is_palindrom(self):
+        clean_string = ''.join(s.lower() for s in self if s.isalnum())
+        return clean_string == clean_string[::-1]
+
+
+#  calls
+#  Task 1
+
+soda_with_flavor = Soda("клубничным")
+print(soda_with_flavor)
+
+soda_without_flavor = Soda()
+print(soda_without_flavor)
+
+#  Task 2
+
+
+result_addition = Math.addition(4, -23)
+print(f'the result of sum: {result_addition}')
+result_subtraction = Math.subtraction(4.5, 34.5)
+print(f'the result of subtraction: {result_subtraction}')
+result_multiplication = Math.multiplication(12, 5)
+print(f'the result of multiplication: {result_multiplication}')
+result_division = Math.division(34, 5)
+print(f'the result of division: {result_division}')
+
+# Task 3
+
+my_car = Car(color="red", type_car="bmw", year=2020)
+
+print(f"color : {my_car.color}, type: {my_car.type_car}, year: {my_car.year}")
+
+my_car.start()
+
+my_car.set_year(2021)
+my_car.set_type_car("ferrari")
+my_car.set_color("green")
+
+my_car.stop()
+
+#  Task 4
+
+
 sphere1 = Sphere()
 print('FIRST SPHERE:')
 print('Volume:', sphere1.get_volume())
@@ -158,20 +180,7 @@ print('New Center:', sphere2.get_center())
 point_inside = sphere2.is_point_inside(2, 3, 4)
 print('Is Point Inside Sphere:', point_inside)
 
-
 #  Task 5
-
-class SuperStr(str):
-    def is_repeatance(self, string):
-        if not string:
-            return False
-
-        repeat_count = len(self) // len(string)
-        return self == string * repeat_count
-
-    def is_palindrom(self):
-        clean_string = ''.join(s.lower() for s in self if s.isalnum())
-        return clean_string == clean_string[::-1]
 
 
 super_str = SuperStr("abcabcabc")
